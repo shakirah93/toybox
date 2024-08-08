@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toy Box Management</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav>
+      <a href="#" id="addBlockLink">Add Block</a>
+      <a href="#" id="updateBlockLink">Update Block</a>
+      <a href="#" id="deleteBlockLink">Delete Block</a>
+    </nav>
+    <main>
+      <div class="container">
+        <h1>Toy Box Management</h1>
+
+        <!-- Form to add a new block -->
+        <form id="addBlockForm">
+          <h2>Add New Block</h2>
+          <input
+            type="text"
+            id="blockColor"
+            placeholder="Block Color"
+            required
+          />
+          <button type="submit">Add Block</button>
+        </form>
+
+        <!-- Form to update an existing block -->
+        <form id="updateBlockForm">
+          <h2>Update Block</h2>
+          <input
+            type="number"
+            id="updateBlockId"
+            placeholder="Block ID to Update"
+            required
+          />
+          <input
+            type="text"
+            id="updateBlockColor"
+            placeholder="New Block Color"
+            required
+          />
+          <button type="submit">Update Block</button>
+        </form>
+
+        <!-- Form to delete a block -->
+        <form id="deleteBlockForm">
+          <h2>Delete Block</h2>
+          <input
+            type="number"
+            id="deleteBlockId"
+            placeholder="Block ID to Delete"
+            required
+          />
+          <button type="submit">Delete Block</button>
+        </form>
+
+        <!-- Display all blocks -->
+        <h2>All Toys</h2>
+        <p id="noBlocksMessage">No toys available.</p>
+        <ul id="blockList"></ul>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
