@@ -29,9 +29,9 @@ document
   .getElementById("updateBlockForm")
   .addEventListener("submit", async (e) => {
     e.preventDefault();
-    const blockId = parseInt(document.getElementById("updateBlockId").value);
+    const blockId = document.getElementById("updateBlockId").value;
+    console.log(blockId);
     const updatedBlock = {
-      id: blockId,
       color: document.getElementById("updateBlockColor").value,
     };
     try {
@@ -57,7 +57,7 @@ document
   .getElementById("deleteBlockForm")
   .addEventListener("submit", async (e) => {
     e.preventDefault();
-    const blockId = parseInt(document.getElementById("deleteBlockId").value);
+    const blockId = document.getElementById("deleteBlockId").value;
     try {
       const response = await fetch(`http://localhost:5000/blocks/${blockId}`, {
         method: "DELETE",
@@ -91,7 +91,7 @@ function fetchBlocks() {
         noBlocksMessage.style.display = "none"; // Hide the message if there are blocks
         blocks.forEach((block) => {
           const listItem = document.createElement("li");
-          listItem.textContent = `ID: ${block.id}, Color: ${block.color}`;
+          listItem.textContent = `ID: ${block._id}, Color: ${block.color}`;
           blockList.appendChild(listItem);
         });
       } else {
